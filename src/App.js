@@ -9,10 +9,10 @@ import NumberOfEvents from './NumberOfEvents';
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
   }
 
-  updateEvents = (location) => {
+  updateEvents = (location, NumberOfEvents) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
         events :

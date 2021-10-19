@@ -23,10 +23,10 @@ class Event extends Component {
             <p className="eventDetails">{event.description}</p>
           )}
           {this.state.show === false && (
-            <button className="showDetails" onClick={() => this.handleButton()}>Show Details</button>
+            <button className="detailsButton" onClick={() => this.handleButton()}>Show Details</button>
           )}
           {this.state.show === true && (
-            <button className="hideDetails" onClick={() => this.handleButton()}>Hide Details</button>
+            <button className="detailsButton" onClick={() => this.handleButton()}>Hide Details</button>
           )}
         </ul>
       </div>

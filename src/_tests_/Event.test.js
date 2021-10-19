@@ -25,7 +25,7 @@ describe("<Event /> component", () => {
     EventWrapper.setState({
       show: false,
     });
-    EventWrapper.find(".showDetails").simulate("click");
+    EventWrapper.find(".detailsButton").simulate("click");
     expect(EventWrapper.state("show")).toEqual(true);
   });
 
@@ -40,7 +40,7 @@ describe("<Event /> component", () => {
     EventWrapper.setState({
       show: false,
     });
-    EventWrapper.find(".showDetails").simulate("click");
+    EventWrapper.find(".detailsButton").simulate("click");
     expect(EventWrapper.find(".eventDetails")).toHaveLength(1);
   });
 
@@ -48,7 +48,7 @@ describe("<Event /> component", () => {
     EventWrapper.setState({
       show: true,
     });
-    EventWrapper.find(".hideDetails").simulate("click");
+    EventWrapper.find(".detailsButton").simulate("click");
     expect(EventWrapper.find(".eventDetails")).toHaveLength(0);
   });
 
