@@ -9,11 +9,16 @@ class NumberOfEvents extends Component {
 
   handleInputChanged = (event) => {
     const value = event.target.value;
-    if (value <= 1 || value > 99) {
+    if (value <= 1) {
       return this.setState({
-        errorText: 'Enter a number from 1 to 99',
+        errorText: 'Enter a number from 1 to 32',
         numberOfEvents: ''
       });
+     } else if (value > 32) {
+        return this.setState({
+          errorText: 'Enter a number from 1 to 32',
+          numberOfEvents: ''
+        });
     } else {
       this.setState({
         numberOfEvents: value,

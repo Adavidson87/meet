@@ -37,7 +37,7 @@ defineFeature(feature, test => {
 
     then('change the number of events shown to what the user chose.', () => {
       NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-      expect(NumberOfEventsWrapper.state('numberOfEvets')).toBe(1);
+      expect(NumberOfEventsWrapper.state('NumberOfEvents')).toBe();
     });
   });
 });
