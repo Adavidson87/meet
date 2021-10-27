@@ -13,7 +13,7 @@ function WelcomeScreen(props) {
           <button onClick={() => { props.getAccessToken() }} rel="nofollow noopener" class="btn-text"> <b>Sign in with google</b></button>
         </div>
       </div>
-      <a href="https://adavidson87.github.io/meet/privacy.html" rel="nofollow noopener">Privacy policy</a>
+      <a href="https://adavidson87.github.io/meet/privacy-policy.html" rel="nofollow noopener">Privacy policy</a>
     </div>
   )
     : null
