@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from 'moment';
 
 class Event extends Component {
 
@@ -12,13 +13,15 @@ class Event extends Component {
 
   render() {
     let event = this.props.event;
+    let startTime = moment.utc(`${event.start.dateTime}`).local(true).format("llll")
+    let endTime = moment.utc(`${event.end.dateTime}`).local(true).format("llll")
 
     return (
       <div className="event">
         <ul className="list-events">
           <li className="eventSummary"><h2>{event.summary}</h2></li>
           <li className="eventLocation"><h3>{event.location}</h3></li>
-          <li className="eventDate">Begins: {event.start.dateTime} {event.start.timeZone}, Ends: {event.end.dateTime} {event.end.timeZone}</li>
+          <li className="eventDate">Begins: {startTime}, Ends: {endTime}</li>
           {this.state.show === true && (
             <p className="eventDetails">{event.description}</p>
           )}

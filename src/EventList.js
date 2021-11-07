@@ -6,14 +6,15 @@ class EventList extends Component {
   render() {
     const { events } = this.props;
     return (
-      <ul className="EventList">
-        {!navigator.onLine ? (<WarningAlert text='You are offline, list of events may not be current.' />) : (<WarningAlert text=' ' />)}
-        {events.map(event =>
-          <li key={event.id}>
-            <Event event={event} />
-          </li>
-        )}
-      </ul>
+      <div>{!navigator.onLine ? (<WarningAlert text='You are offline, list of events may not be current.' />) : (<WarningAlert text=' ' />)}
+        <ul className="EventList">
+          {events.map(event =>
+            <li key={event.id}>
+              <Event event={event} />
+            </li>
+          )}
+        </ul>
+      </div>
     );
   }
 }
