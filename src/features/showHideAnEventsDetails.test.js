@@ -28,6 +28,7 @@ defineFeature(feature, test => {
 
     then('the user should see a list of collapsed events.', () => {
       AppWrapper.update();
+      AppWrapper.setState({events: mockData})
       expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
     });
   });

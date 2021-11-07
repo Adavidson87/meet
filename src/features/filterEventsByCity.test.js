@@ -21,6 +21,7 @@ defineFeature(feature, test => {
 
     then('the user should see the list of upcoming events.', () => {
       AppWrapper.update();
+      AppWrapper.setState({ events: mockData });
       expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
     });
   });
@@ -45,11 +46,15 @@ defineFeature(feature, test => {
     let AppWrapper;
     given('user was typing “Berlin” in the city textbox', async () => {
       AppWrapper = await mount(<App />);
+      let locations = mockData.map(event => event.location);
+      AppWrapper.setState({locations});
       AppWrapper.find('.city').simulate('change', { target: { value: 'Berlin' } });
     });
 
     and('the list of suggested cities is showing', () => {
       AppWrapper.update();
+      let locations = mockData.map(event => event.location);
+      AppWrapper.setState({ locations })
       expect(AppWrapper.find('.suggestions li')).toHaveLength(2);
     });
 
@@ -63,6 +68,7 @@ defineFeature(feature, test => {
     });
 
     and('the user should receive a list of upcoming events in that city', () => {
+      AppWrapper.setState({ events: mockData });
       expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
 
     });
